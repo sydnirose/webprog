@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(254, 203, 212);
+}
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 400%;
+}
