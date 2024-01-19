@@ -1,16 +1,15 @@
 let grid = undefined;
-let stroke1 = prompt("enter a basic color name in lower case", "red");
 function setup() {
     createCanvas(1000, 800);
     background(154, 207, 245);
-    grid = loadImage("images/100px_grid.png");
+    grid = loadImage("../1.a_snowcreature/images/100px_grid.png");
 }
 function draw() {
     background(grid);
     // snowcreature body
     fill("f1f1f1");
-    stroke(30, 42, 71);
-    strokeWeight(10);
+    stroke("white");
+    strokeWeight(0);
     ellipse(500, 200, 175);
     ellipse(500, 380, 225);
     ellipse(500, 600, 275);
@@ -30,6 +29,5 @@ function draw() {
     // snowcreature mouth
     noFill();
     strokeWeight(10);
-    stroke(stroke1);
-    arc(500, 225, 80, 80, 0, PI);
+    arc(500, 225, 80, 80, 0, HALF_PI);
 }
