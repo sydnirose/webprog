@@ -6,7 +6,7 @@ function setup() {
     grid = loadImage("images/100px_grid.png");
 }
 function draw() {
-    background(grid);
+    // background(grid);
     // snowcreature body
     fill("f1f1f1");
     stroke(30, 42, 71);
@@ -31,5 +31,5 @@ function draw() {
     noFill();
     strokeWeight(10);
     stroke(stroke1);
-    arc(500, 225, 80, 80, 0, PI);
+    arc(500, 225, 30, 30, 0, PI);
 }
