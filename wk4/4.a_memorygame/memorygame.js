@@ -5,16 +5,15 @@ let cardHeight = 140;
 
 function setup() {
     createCanvas(650, 650);
-    background('lightblue');
+    background('#dbebd8');
 }
 
 function draw() {
     noLoop();
-
+    noStroke();
     // make 4 rows of 4
     // outer loop handles rows
     for(let rows = 0; rows < 4; rows++) {
-        
         // inner loop handles columns
         for(let columns = 0; columns < 4; columns++) {
             console.log(startingX, startingY)
