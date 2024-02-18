@@ -26,7 +26,7 @@ function preload() {
 
 function setup() {
     createCanvas(700, 700);
-    background('#cef2d4');
+    background('#f5ecd0');
     let selectedFaces = [];
     for (let z = 0; z < 8; z++) {
         const randomIdx = floor(random(cardfaceArray.length));
@@ -35,6 +35,7 @@ function setup() {
         selectedFaces.push(face);
         cardfaceArray.splice(randomIdx, 1);
     }
+    selectedFaces = shuffleArray(selectedFaces);
     for (let j = 0; j < 4; j++) {
         for (let i = 0; i < 4; i++) {
             const faceImage = selectedFaces.pop();
@@ -97,4 +98,16 @@ class Card {
         }
         this.show();
     }
+}
+
+function shuffleArray (array) {
+    let counter=array.length;
+    while (counter > 0) {
+        const idx = Math.floor(Math.random() * counter);
+        counter--;
+        const temp = array[counter];
+        array[counter] = array[idx];
+        array[idx] = temp;
+    }
+    return array;
 }
