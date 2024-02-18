@@ -29,7 +29,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(700, 900);
+    createCanvas(700, 800);
     let selectedFaces = [];
     for (let z = 0; z < 8; z++) {
         const randomIdx = floor(random(cardfaceArray.length));
@@ -52,10 +52,10 @@ function setup() {
 
 function draw() {
     background('#f5ecd0');
-    if (gameState.numMatch === gameState.totalPairs) {
-        fill('green');
-        textSize(66);
-        text('You win!!', 400, 425);
+    if (gameState.numMatched === gameState.totalPairs) {
+        fill('#756046');
+        textSize(36);
+        text('you win!!', 275, 35);
         noLoop();
     }
     for (let l = 0; l < cards.length; l++) {
@@ -69,8 +69,8 @@ function draw() {
     gameState.waiting = false;
     fill('#756046');
     textSize(36);
-    text('Attempts ' + gameState.attempts, 50, 750);
-    text('Matches ' + gameState.numMatched, 50, 700);
+    text('attempts ' + gameState.attempts, 250, 750);
+    text('matches ' + gameState.numMatched, 250, 700);
 }
 
 function mousePressed() {
@@ -84,7 +84,8 @@ function mousePressed() {
         }
     }
     if (gameState.flippedCards.length === 2) {
-        if (gameState.flippedCards[0].faceImage === gameState.flippedCards[1].faceImage) {
+        gameState.attempts ++;
+        if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].cardFaceImg) {
             gameState.flippedCards[0].isMatch = true;
             gameState.flippedCards[1].isMatch = true;
             gameState.flippedCards.length = 0;
@@ -95,7 +96,7 @@ function mousePressed() {
             const loopTimeout = window.setTimeout(() => {
                 loop();
                 window.clearTimeout(loopTimeout);
-            }, 1000)
+            }, 1500)
         }
     }
 }
