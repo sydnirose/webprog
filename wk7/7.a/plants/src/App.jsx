@@ -58,13 +58,19 @@ function App() {
           </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{plantArray[0].commonName}</td>
-                <td>{plantArray[0].scientificName}</td>
-                <td>{plantArray[0].numOfSpecies}</td>
-                <td>{plantArray[0].nativeTo}</td>
-                <td><img src={plantArray[0].image} alt={plantArray[0].commonName} /></td>
-            </tr>
+          {plantArray.map((plant, index) => {
+            console.log("plant", plant)
+            return (
+            <PlantRow
+              key={plant.image}
+              commonName={plant.commonName}
+              scientificName={plant.scientificName}
+              numOfSpecies={plant.scientificName}
+              nativeTo={plant.nativeTo}
+              image={plant.image}
+            />
+            )
+          })}
         </tbody>
       </table>
     </>
