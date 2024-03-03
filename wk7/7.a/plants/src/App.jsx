@@ -1,4 +1,5 @@
 import "./App.css";
+import { PlantRow } from "./PlantRow.jsx";
 
 function App() {
   const plantArray = [
@@ -37,7 +38,7 @@ function App() {
     {
       commonName: "Bird of Paradise ",
       scientificName: "Strelitzia Nicolia ",
-      numOfSpecies: "There are 45 bird of pparadise species. ",
+      numOfSpecies: "There are 45 bird of paradise species. ",
       nativeTo: "The monstera is native to south Africa. ",
       image: "/bird-of-paradise.png",
     }
@@ -45,8 +46,7 @@ function App() {
 
   return (
     <>
-      <h1>My Plant Array</h1>
-      <p>Show plant array here</p>
+      <h1>MY PLANT TABLE!</h1>
       <table className="plant-table">
         <thead>
           <tr>
@@ -59,13 +59,13 @@ function App() {
         </thead>
         <tbody>
           {plantArray.map((plant, index) => {
-            console.log("plant", plant)
             return (
             <PlantRow
               key={plant.image}
+              odd ={index % 2 === 0}
               commonName={plant.commonName}
               scientificName={plant.scientificName}
-              numOfSpecies={plant.scientificName}
+              numOfSpecies={plant.numOfSpecies}
               nativeTo={plant.nativeTo}
               image={plant.image}
             />

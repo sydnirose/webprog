@@ -1,7 +1,12 @@
+body {
+  font-family: monospace;
+  text-align: center;
+}
+
 .plant-table {
   width: 100%;
   border: 2px solid darkgreen;
-  border-radius: 25px;
+  border-radius: 3px;
 }
 
 .plant-table thead, .plant-table tr {
@@ -9,11 +14,12 @@
 }
 
 .plant-table td, .plant-table th {
-  border-left: 2px solid darkgreen;
+  border: 2px solid darkgreen;
+  border-radius: 5px;
   text-align: center;
 }
 
 .plant-table img {
   width: 200px;
-  border-radius: 25px;
+  border-radius: 5px;
 }
