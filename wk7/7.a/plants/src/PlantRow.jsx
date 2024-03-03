@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./PlantRow.css";
-export function PlantRow({commonName, scientificName, numOfSpecies, nativeTo, image, odd}) {
+export function PlantRow({commonName, scientificName, numOfSpecies, nativeTo, image, easy, odd}) {
     return (
         <tr className={odd && "odd"}>
-            <td>{commonName}</td>
+            <td style={{fontWeight: easy ? 900 : 200, color: easy ? "darkgreen" : "black", textDecoration: easy ? "underline" : ""}}>{commonName}</td>
             <td>{scientificName}</td>
             <td>{numOfSpecies}</td>
             <td>{nativeTo}</td>
