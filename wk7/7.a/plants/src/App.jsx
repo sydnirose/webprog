@@ -8,7 +8,7 @@ function App() {
       scientificName: "Monstera Deliciosa ",
       numOfSpecies: "There are 59 monstera species. ",
       nativeTo: "The monstera is native to southern Mexico, south of Panama. ",
-      image: "/monstera.png",
+      image: "./monstera.png",
       easy: true,
     },
 
@@ -17,7 +17,7 @@ function App() {
       scientificName: "Ficus Lyrata ",
       numOfSpecies: "The ficus has over 1000 species that occur throughout the pantropics. ",
       nativeTo: "The fiddle leaf fig is native to western Africa. ",
-      image: "/fiddle-leaf-fig.png",
+      image: "./fiddle-leaf-fig.png",
       easy: false,
     },
 
@@ -26,7 +26,7 @@ function App() {
       scientificName: "Alocasia Micholitziana ",
       numOfSpecies: "There are about 90 species of alocasias. ",
       nativeTo: "The alocasia is native to Asia, southeast Asia and Australia. ",
-      image: "/alocasia-frydek.png",
+      image: "./alocasia-frydek.png",
       easy: false,
     },
 
@@ -35,7 +35,7 @@ function App() {
       scientificName: "Zamioculcas Zamiifolia ",
       numOfSpecies: "There are roughly 15 species of ZZ plants. ",
       nativeTo: "The ZZ is native to eastern Africa. ",
-      image: "/zz.png",
+      image: "./zz.png",
       easy: true,
     },
 
@@ -44,7 +44,7 @@ function App() {
       scientificName: "Strelitzia Nicolia ",
       numOfSpecies: "There are 45 bird of paradise species. ",
       nativeTo: "The monstera is native to south Africa. ",
-      image: "/bird-of-paradise.png",
+      image: "./bird-of-paradise.png",
       easy: true,
     }
   ];
