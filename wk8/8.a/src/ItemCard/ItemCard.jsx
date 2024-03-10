@@ -24,10 +24,12 @@ export default function ItemCard({
             </div>
             <div className="cardTitle">{commonName}</div>
             <div className="action">
-                <a href="#" onClick={() => {
+                <a href="#" onClick={(evt) => {
+                    evt.preventDefault();
                     deleteFn(id)
                 }}><img src={trash}/></a>
-                <a href="#" onClick={()=> {
+                <a href="#" onClick={(evt)=> {
+                    evt.preventDefault();
                     duplicateFn(id)
                 }} ><img src={copy}/></a>
             </div>

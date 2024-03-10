@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Masthead from './Masthead/Masthead';
 import ItemCard from './ItemCard/ItemCard';
+import {nanoid} from "nanoid";
 
 function App() {
   const [plants, setPlants] = useState([
@@ -74,7 +75,8 @@ function duplicateCard(id) {
   const matchingArray = plants.find((plantArray) => {
     return plantArray.id === id
   });
-  setPlants([...plants, matchingArray]);
+  const updatedArray = {...matchingArray, id: nanoid()}
+  setPlants([...plants, updatedArray]);
 }
 
   return (
@@ -93,7 +95,7 @@ function duplicateCard(id) {
               duplicateFn={duplicateCard}
               {...plantArray} />
           )
-        })};
+        })}
       </div>
     </div>
   )
