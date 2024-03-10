@@ -61,6 +61,22 @@ function App() {
     }
   ]);
 
+function deleteCard(id) {
+  console.log("delete me", id);
+  const updatedArray = plants.filter((plantArray) => {
+    return plantArray.id !== id
+  })
+  setPlants(updatedArray);
+}
+
+function duplicateCard(id) {
+  console.log("duplicate me", id);
+  const matchingArray = plants.find((plantArray) => {
+    return plantArray.id === id
+  });
+  setPlants([...plants, matchingArray]);
+}
+
   return (
     <div className="page">
       {/* Masthead goes here */}
@@ -71,9 +87,13 @@ function App() {
         {/* use ItemCard component in loop */}
         {plants.map((plantArray) => {
           return (
-            <ItemCard key={plantArray.id} {...plantArray} />
+            <ItemCard
+              key={plantArray.id}
+              deleteFn={deleteCard}
+              duplicateFn={duplicateCard}
+              {...plantArray} />
           )
-        })}
+        })};
       </div>
     </div>
   )

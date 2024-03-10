@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import "./ItemCard.css";
 import leaf from "../assets/icons/leaf-2-svgrepo-com.svg";
+import trash from "../assets/icons/trash-bin-trash-svgrepo-com.svg";
+import copy from "../assets/icons/copy-svgrepo-com.svg";
 
 export default function ItemCard({
     commonName,
@@ -9,7 +11,9 @@ export default function ItemCard({
     nativeTo,
     image,
     easy,
-    id
+    id,
+    deleteFn,
+    duplicateFn
 }){
 
     return (
@@ -19,6 +23,15 @@ export default function ItemCard({
                 <img src={image} alt={commonName} />
             </div>
             <div className="cardTitle">{commonName}</div>
+            <div className="action">
+                <a href="#" onClick={() => {
+                    deleteFn(id)
+                }}><img src={trash}/></a>
+                <a href="#" onClick={()=> {
+                    duplicateFn(id)
+                }} ><img src={copy}/></a>
+            </div>
+
             <div className="cardInfo">{scientificName}</div>
             <div className="cardInfo">{numOfSpecies}</div>
             <div className="cardInfo">{nativeTo}</div>
@@ -32,5 +45,7 @@ ItemCard.propTypes = {
     nativeTo: PropTypes.string,
     image: PropTypes.string,
     easy: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
+    duplicateFn: PropTypes.func,
+    deleteFn: PropTypes.func
 }
