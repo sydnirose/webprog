@@ -12,16 +12,16 @@ function App() {
       nativeTo: "The monstera is native to southern Mexico, south of Panama. ",
       image: "./monstera.png",
       easy: true,
-      id: 1
+      id: "1"
     },
     {
       commonName: "Fiddle Leaf Fig ",
       scientificName: "Ficus Lyrata ",
-      numOfSpecies: "The ficus has over 1000 species that occur throughout the pantropics. ",
+      numOfSpecies: "The ficus has over 1000 species. ",
       nativeTo: "The fiddle leaf fig is native to western Africa. ",
       image: "./fiddle-leaf-fig.png",
       easy: false,
-      id: 2
+      id: "2"
     },
     {
       commonName: "Alocasia Frydek ",
@@ -30,7 +30,7 @@ function App() {
       nativeTo: "The alocasia is native to Asia, southeast Asia and Australia. ",
       image: "./alocasia-frydek.png",
       easy: false,
-      id: 3
+      id: "3"
     },
     {
       commonName: "ZZ Plant ",
@@ -39,7 +39,7 @@ function App() {
       nativeTo: "The ZZ is native to eastern Africa. ",
       image: "./zz.png",
       easy: true,
-      id: 4
+      id: "4"
     },
     {
       commonName: "Bird of Paradise ",
@@ -48,7 +48,16 @@ function App() {
       nativeTo: "The monstera is native to south Africa. ",
       image: "./bird-of-paradise.png",
       easy: true,
-      id: 5
+      id: "5"
+    },
+    {
+      commonName: "Snake Plant ",
+      scientificName: "Dracaena Trifasciata ",
+      numOfSpecies: "There are over 70 snake plant species. ",
+      nativeTo: "The snake plant is native to West Africa. ",
+      image: "./snake-plant.png",
+      easy: true,
+      id: "6"
     }
   ]);
 
@@ -62,7 +71,7 @@ function App() {
         {/* use ItemCard component in loop */}
         {plants.map((plantArray) => {
           return (
-            <ItemCard key={plantArray.id} />
+            <ItemCard key={plantArray.id} {...plantArray} />
           )
         })}
       </div>
