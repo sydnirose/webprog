@@ -247,7 +247,7 @@ export function AlpacaForm() {
           </label>
         </div>
       </fieldset>
-      <button type="submit">
+      <button type="submit" disabled={errorObject.firstName || errorObject.lastName}>
         Sign me up!
       </button>
     </form>
