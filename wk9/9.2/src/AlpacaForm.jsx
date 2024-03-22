@@ -136,7 +136,7 @@ export function AlpacaForm() {
       <fieldset>
         <legend>Personal Information</legend>
         <div className="formgroup">
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName" className="required">First Name</label>
           <input
             type="text"
             name="firstName"
@@ -153,7 +153,7 @@ export function AlpacaForm() {
             )}
           </div>
         <div className="formgroup">
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName" className="required">Last Name</label>
           <input
             type="text"
             name="lastName"
