@@ -13,7 +13,6 @@ export function NewPlantForm() {
     const [newCard, setNewCard] = useState(initialCardSetting);
     function changeHandler(event) {
         console.log(event.target.value);
-        console.log({newCard});
         setNewCard((previousCard) => {
 
             console.log(event.target.name);
@@ -27,7 +26,7 @@ export function NewPlantForm() {
     }
     function submitHandler(event) {
         event.preventDefault();
-        console.log("submit triggered")
+        console.log({newCard});
     }
     return (
         <form className="new-plant-form-wrapper" onSubmit={submitHandler}>
@@ -85,6 +84,16 @@ export function NewPlantForm() {
                         name="nativeTo"
                         id="nativeTo"
                         value={newCard.nativeTo}
+                        onChange={changeHandler}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="easy">This plant is easy for beginners</label>
+                    <input 
+                        type="checkbox"
+                        name="easy"
+                        id="easy"
+                        value={newCard.easy}
                         onChange={changeHandler}
                     />
                 </div>
