@@ -16,12 +16,10 @@ export function NewPlantForm() {
         setNewCard((previousCard) => {
 
             console.log(event.target.name);
-
                 return {
                     ...previousCard, 
                     [event.target.name]: event.target.value
                 }
-
         })
     }
     function submitHandler(event) {
