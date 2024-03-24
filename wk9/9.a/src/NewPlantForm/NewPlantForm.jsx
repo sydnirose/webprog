@@ -12,11 +12,25 @@ export function NewPlantForm() {
     };
     const [newCard, setNewCard] = useState(initialCardSetting);
     function changeHandler(event) {
+        console.log(event.target.value);
+        console.log({newCard});
+        setNewCard((previousCard) => {
 
+            console.log(event.target.name);
+
+                return {
+                    ...previousCard, 
+                    [event.target.name]: event.target.value
+                }
+
+        })
     }
-
+    function submitHandler(event) {
+        event.preventDefault();
+        console.log("submit triggered")
+    }
     return (
-        <form className="new-plant-form-wrapper">
+        <form className="new-plant-form-wrapper" onSubmit={submitHandler}>
             <fieldset>
                 <legend>Plant Details</legend>
                 <div className="form-group">
@@ -29,12 +43,56 @@ export function NewPlantForm() {
                         onChange={changeHandler}
                     />
                 </div>
-
+                <div className="form-group">
+                    <label htmlFor="image">Plant Image URL</label>
+                    <input
+                        type="text"
+                        name="image"
+                        id="image"
+                        value={newCard.image}
+                        onChange={changeHandler}
+                    />
+                </div>
+                
             </fieldset>
+
             <fieldset>
                 <legend>Plant Facts</legend>
+                <div className="form-group">
+                    <label htmlFor="scientificName">Plant Scientific Name</label>
+                    <input
+                        type="text"
+                        name="scientificName"
+                        id="scientificName"
+                        value={newCard.scientificName}
+                        onChange={changeHandler}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="numOfSpecies">Number of Species</label>
+                    <input
+                        type="text"
+                        name="numOfSpecies"
+                        id="numOfSpecies"
+                        value={newCard.numOfSpecies}
+                        onChange={changeHandler}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="nativeTo">Native to</label>
+                    <input
+                        type="text"
+                        name="nativeTo"
+                        id="nativeTo"
+                        value={newCard.nativeTo}
+                        onChange={changeHandler}
+                    />
+                </div>
             </fieldset>
 
+            <button type="submit">
+                Add Plant
+            </button>
         </form>
     )
 }

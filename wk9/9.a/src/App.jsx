@@ -47,7 +47,7 @@ function App() {
       commonName: "Bird of Paradise ",
       scientificName: "Strelitzia Nicolia ",
       numOfSpecies: "There are 45 bird of paradise species. ",
-      nativeTo: "The monstera is native to south Africa. ",
+      nativeTo: "The bird of paradise is native to south Africa. ",
       image: "./bird-of-paradise.png",
       easy: true,
       id: "5"

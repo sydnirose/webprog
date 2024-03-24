@@ -2,4 +2,15 @@
     border-radius: 20px;
     border: 2px solid darkgreen;
     padding: 20px;
+    font-family: monospace;
+}
+
+legend {
+    font-size: 18px;
+    text-align: center
+}
+
+fieldset {
+    margin-bottom: 1em;
+    text-align: center
 }
