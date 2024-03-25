@@ -184,7 +184,7 @@ export function NewPlantForm({addCardFn}) {
                 </div>
             </fieldset>
 
-            <button type="submit" disabled={errorObj.commonName || errorObj.image}>
+            <button className="button" type="submit" disabled={errorObj.commonName || errorObj.image}>
                 Add Plant
             </button>
 
