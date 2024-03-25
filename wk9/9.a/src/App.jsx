@@ -80,6 +80,16 @@ function duplicateCard(id) {
   setPlants([...plants, updatedArray]);
 }
 
+// makes the new card from user input on form
+function addCard(newCard) {
+  const cardWithId = {
+    ...newCard,
+    id: nanoid()
+  }
+  setPlants([...plants, cardWithId])
+
+}
+
   return (
     <div className="page">
       {/* Masthead goes here */}
@@ -99,7 +109,7 @@ function duplicateCard(id) {
         })}
       </div>
       <hr />
-      <NewPlantForm />
+      <NewPlantForm addCardFn={addCard} />
     </div>
   )
 }

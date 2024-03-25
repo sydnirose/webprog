@@ -7,10 +7,19 @@
 
 legend {
     font-size: 18px;
-    text-align: center
+    text-align: center;
 }
 
 fieldset {
     margin-bottom: 1em;
-    text-align: center
+    text-align: center;
+}
+
+.form-group {
+    padding: 15px;
+}
+
+label.required::before {
+    content: "* ";
+    color: red;
 }
