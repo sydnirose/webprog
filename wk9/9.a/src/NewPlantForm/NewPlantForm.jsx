@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import "./NewPlantForm.css";
+import clsx from "clsx";
 
 export function NewPlantForm({addCardFn}) {
 
@@ -85,7 +86,7 @@ export function NewPlantForm({addCardFn}) {
 
             <fieldset>
                 <legend>Plant Details</legend>
-                <div className="form-group">
+                <div className={{"form-group": true, "error": errorObj.commonName}}>
                     <label className="required" htmlFor="commonName">Plant Common Name </label>
                     <input
                         type="text"
@@ -107,11 +108,11 @@ export function NewPlantForm({addCardFn}) {
                     {errorObj.commonName && (
                         <>
                             <br />
-                            <small>{errorObj.commonName}</small>
+                            <small className="errorFeedback">{errorObj.commonName}</small>
                         </>
                     )}
                 </div>
-                <div className="form-group">
+                <div className={{"form-group": true, "error": errorObj.image}}>
                     <label className="required" htmlFor="image">Plant Image URL </label>
                     <input
                         type="text"
@@ -133,7 +134,7 @@ export function NewPlantForm({addCardFn}) {
                     {errorObj.image && (
                         <>
                             <br />
-                            <small>{errorObj.image}</small>
+                            <small className="errorFeedback">{errorObj.image}</small>
                         </>
                     )}
                 </div>     
