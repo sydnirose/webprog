@@ -1,8 +1,9 @@
+import llamaPic from "../assets/llama.png";
 export function Llama() {
     return(
         <>
             <h1>Llamas</h1>
-            {/* please include a llama picture here! */}
+            <img src={llamaPic} alt="llama" />
             <p>
                 Lamoids, or llamas (as they are more generally known as a group), consist of the vicuña (Vicugna vicugna, prev. Lama
                 vicugna), guanaco (Lama guanicoe), Suri alpaca, and Huacaya alpaca (Vicugna pacos, prev. Lama guanicoe pacos), and the
@@ -16,7 +17,7 @@ export function Llama() {
 
             <p>
                 The genera Lama and Vicugna are, with the two species of true camels, the sole existing representatives of a very
-                distinct section of the Artiodactyla or even-toed ungulates, called Tylopoda, or "bump-footed", from the peculiar
+                distinct section of the Artiodactyla or even-toed ungulates, called Tylopoda, or &quot;bump-footed&quot;, from the peculiar
                 bumps on the soles of their feet. The Tylopoda consist of a single family, the Camelidae, and shares the order Artiodactyla
                 with the Suina (pigs), the Tragulina (chevrotains), the Pecora (ruminants), and the Whippomorpha (hippos and
                 cetaceans, which belong to Artiodactyla from a cladistic, if not traditional, standpoint). The Tylopoda have more or less
