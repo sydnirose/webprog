@@ -1,4 +1,5 @@
 import llamaPic from "../assets/llama.png";
+
 export function Llama() {
     return(
         <>
