@@ -1,8 +1,9 @@
 import alpacaPic from "../assets/alpaca.png";
+
 export function Alpaca() {
     return(
         <>
-            <h1>Alpaca</h1>
+            <h1>Alpacas</h1>
             <img src={alpacaPic} alt="alpaca" />
             <p>
                 The alpaca (Lama pacos) is a species of South American camelid mammal. It is similar to, and often confused with, the
