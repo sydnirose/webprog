@@ -1,0 +1,47 @@
+.new-plant-form-wrapper {
+    border-radius: 20px;
+    border: 2px solid darkgreen;
+    padding: 20px;
+    font-family: monospace;
+}
+
+legend {
+    font-size: 18px;
+    text-align: center;
+}
+
+fieldset {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.errorFeedback {
+    color: red;
+    text-align: center;
+    font-weight: 900;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+.form-group.error {
+    border: 2px solid red;
+}
+
+label.required::before {
+    content: "* ";
+    color: red;
+}
+
+.button {
+    background-color: darkgreen;
+    color: beige;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow: 0 8px 16px 0 gray;
+    font-family: monospace;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+}
