@@ -1,0 +1,28 @@
+.plant-details {
+    font-family: monospace;
+    text-align: center;
+    margin: 1em;
+}
+
+.plant-card {
+    border: 2px solid darkgreen;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 35px;
+}
+
+.home-link {
+    font-size: 20px;
+}
+
+.detail-head {
+    font-size: 32px;
+}
+
+.detail-p {
+    font-size: 16px;
+}
+
+.detail-img {
+    max-width: 400px;
+}

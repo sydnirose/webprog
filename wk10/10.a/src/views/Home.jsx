@@ -3,9 +3,10 @@ import { nanoid } from "nanoid";
 import Masthead from "../Masthead/Masthead";
 import ItemCard from "../ItemCard/ItemCard";
 import { NewPlantForm } from "../NewPlantForm/NewPlantForm";
+import plantData from "../assets/plant-data.json";
 
 export function Home() {
-    const [plants, setPlants] = useState();
+    const [plants, setPlants] = useState(plantData);
 
 function deleteCard(id) {
   console.log("delete me", id);

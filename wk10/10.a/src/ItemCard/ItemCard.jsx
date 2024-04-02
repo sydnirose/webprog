@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./ItemCard.css";
 import leaf from "../assets/icons/leaf-2-svgrepo-com.svg";
 import trash from "../assets/icons/trash-bin-trash-svgrepo-com.svg";
@@ -22,7 +23,11 @@ export default function ItemCard({
             <div className="cardImg">
                 <img src={image} alt={commonName} />
             </div>
-            <div className="cardTitle">{commonName}</div>
+            <div className="cardTitle">
+                <Link to={`${id}`}>
+                    {commonName}
+                </Link>
+            </div>
             <div className="action">
                 <a href="#" onClick={(evt) => {
                     evt.preventDefault();
