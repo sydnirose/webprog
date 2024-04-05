@@ -36,3 +36,11 @@ function draw() {
         endShape(CLOSE)
     }
 }
+
+function mousePressed() {
+    noLoop();
+}
+
+function mouseReleased() {
+    loop();
+}
