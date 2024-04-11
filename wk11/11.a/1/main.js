@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -10,25 +10,36 @@ function draw() {
     // star 1
     push();
     translate(width * 0.8, height * 0.5);
+    rotate(frameCount / 75);
     star(0, -100, 30, 70, 10);
     pop();
 
     // star 2
     push();
     translate(width * 0.8, height * 0.5);
-    star(-200, 30, 30, 70, 10);
+    rotate(frameCount / 55);
+    star(-100, 30, 30, 70, 10);
     pop();
     
     // star 3
     push();
     translate(width * 0.8, height * 0.5);
-    star(-400, -200, 30, 70, 10);
+    rotate(frameCount / 105);
+    star(-150, -100, 30, 70, 10);
     pop();
 
     // star 4
     push();
     translate(width * 0.8, height * 0.5);
-    star(-500, 150, 30, 70, 10);
+    rotate(frameCount / 205);
+    star(-200, 150, 30, 70, 10);
+    pop();
+
+    // star 5
+    push();
+    translate(width * 0.8, height * 0.5);
+    rotate(frameCount / 95);
+    star(20, 150, 30, 70, 10);
     pop();
 }
 
