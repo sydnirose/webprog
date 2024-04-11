@@ -1,49 +1,41 @@
 function setup() {
-    createCanvas(800, 600);
+    createCanvas(windowWidth, windowHeight, WEBGL);
+    noFill();
 }
 
 function draw() {
-    background('#d8d8e3');
-    noStroke();
-    fill('#032363');
+    background('#68736b');
+    rotateY(PI / 6);
+    stroke('#bbc7be');
+    box(35);
+    let rad = millis() / 1000;
 
-    // star 1
-    push();
-    translate(width * 0.8, height * 0.5);
-    star(0, -100, 30, 70, 10);
-    pop();
+    // rotation of angles
+    let ct = cos(rad);
+    let st = sin(rad);
 
-    // star 2
-    push();
-    translate(width * 0.8, height * 0.5);
-    star(-200, 30, 30, 70, 10);
-    pop();
-    
-    // star 3
-    push();
-    translate(width * 0.8, height * 0.5);
-    star(-400, -200, 30, 70, 10);
-    pop();
+    // rotation of matrix
+    applyMatrix(
+        ct, 0.0, st, 0.0, 0.0, 1.0, 0.0, 0.0, -st, 0.0, ct, 0.0, 0.0, 0.0, 0.0, 1.0
+    );
+    stroke('');
+    box(80);
 
-    // star 4
-    push();
-    translate(width * 0.8, height * 0.5);
-    star(-500, 150, 30, 70, 10);
-    pop();
-}
+    applyMatrix(
+        ct, 2.0, st, 0.0, 0.0, 1.0, 0.0, 0.0, -st, 0.0, ct, 0.0, 0.0, 0.0, 0.0, 1.0
+    );
+    stroke('#3dffb1');
+    box(200);
 
-// star shape
-function star(x, y, radius1, radius2, npoints) {
-    let angle = TWO_PI / npoints;
-    let halfAngle = angle / 2.0;
-        beginShape();
-            for (let a = 0; a < TWO_PI; a += angle) {
-                let sx = x + cos(a) * radius2;
-                let sy = y + sin(a) * radius2;
-                vertex(sx, sy);
-                sx = x + cos(a + halfAngle) * radius1;
-                sy = y + sin(a + halfAngle) * radius1;
-                vertex(sx, sy);
-            }
-        endShape(CLOSE);
+    applyMatrix(
+        ct, 0.0, st, 0.0, 0.0, 1.0, 10.0, 0.0, -st, 0.0, ct, 0.0, 0.0, 0.0, 0.0, 1.0
+    );
+    stroke('#fc44e7');
+    box(50);
+
+    applyMatrix(
+        ct, 6.0, st, 0.0, 8.0, 1.0, 0.0, 0.0, -st, 0.0, ct, 0.0, 0.0, 0.0, 0.0, 1.0
+    );
+    stroke('');
+    box(50);
 }
