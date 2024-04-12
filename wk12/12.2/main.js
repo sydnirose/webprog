@@ -1,6 +1,10 @@
 var song;
 var button;
 var bg;
+var fft;
+var w;
+
+var volhistory = [];
 
 function setup() {
     createCanvas(500, 500);
@@ -8,11 +12,9 @@ function setup() {
     song = loadSound("skyfall.m4a", loaded);
     button = createButton("play");
     button.mousePressed(togglePlaying);
-}
-
-// setting background of canvas as cover art
-function draw() {
-    background(bg);
+    angleMode(DEGREES);
+    fft = new p5.FFT(0.9, 128);
+    w = width / 64;
 }
 
 // creates play and pause ability
@@ -24,6 +26,20 @@ function togglePlaying() {
     } else {
         song.pause();
         button.html("play");
+    }
+}
+
+// setting background of canvas as cover art
+function draw() {
+    background(bg);
+    var spectrum = fft.analyze();
+    // stroke(255, 255, 255, 100);
+    noStroke();
+    fill(255, 255, 255, 100)
+    for (var i =0; i < spectrum.length; i++) {
+        var amp = spectrum[i];
+        var y = map(amp, 0, 255, height, 0);
+        rect(i * w, y, w, height - y, 10);
     }
 }
 
