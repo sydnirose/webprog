@@ -1,3 +1,12 @@
 body {
     background-color: #c9ebff;
+    color: #3667b5;
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+  

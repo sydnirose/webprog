@@ -41,9 +41,9 @@ function Raindrop() {
 } 
 
 function mouseClicked() {
-    noLoop();
+    loop();
 }
 
 function doubleClicked() {
-    loop();
+    noLoop();
 }
